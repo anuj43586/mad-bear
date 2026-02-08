@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 30% 95%;
+    --foreground: 15 30% 15%;
+
+    --card: 30 25% 92%;
+    --card-foreground: 15 30% 15%;
+
+    --popover: 30 30% 95%;
+    --popover-foreground: 15 30% 15%;
+
+    --primary: 0 40% 30%;
+    --primary-foreground: 30 30% 95%;
+
+    --secondary: 30 20% 88%;
+    --secondary-foreground: 15 30% 15%;
+
+    --muted: 30 15% 90%;
+    --muted-foreground: 15 10% 45%;
+
+    --accent: 30 25% 85%;
+    --accent-foreground: 15 30% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 82%;
+    --input: 30 15% 82%;
+    --ring: 0 40% 30%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 30 25% 92%;
+    --sidebar-foreground: 15 30% 15%;
+    --sidebar-primary: 0 40% 30%;
+    --sidebar-primary-foreground: 30 30% 95%;
+    --sidebar-accent: 30 20% 88%;
+    --sidebar-accent-foreground: 15 30% 15%;
+    --sidebar-border: 30 15% 82%;
+    --sidebar-ring: 0 40% 30%;
+
+    --brand-cream: 30 30% 95%;
+    --brand-brown: 15 30% 15%;
+    --brand-maroon: 0 40% 30%;
+    --brand-warm: 25 40% 85%;
+    --brand-gold: 35 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    background: linear-gradient(135deg, hsl(var(--brand-maroon)), hsl(var(--brand-brown)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-texture {
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, hsl(var(--brand-warm) / 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsl(var(--brand-gold) / 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, hsl(var(--brand-warm) / 0.2) 0%, transparent 50%);
+  }
+
+  .section-divider {
+    @apply flex items-center gap-4;
+  }
+
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    @apply flex-1 h-px bg-border;
+  }
+}
